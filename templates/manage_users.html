@@ -17,7 +17,7 @@
     <table class="ems-table">
       <thead>
         <tr>
-          <th>#ID</th>
+          <th>ID</th>
           <th>Username</th>
           <th>Email</th>
           <th>Role</th>
@@ -27,7 +27,7 @@
       <tbody>
         {% for u in users %}
         <tr>
-          <td><span class="chip chip-purple">#{{ u[0] }}</span></td>
+          <td><span class="chip chip-purple">{{ u[0] }}</span></td>
 
           <td>
             <div class="d-flex align-items-center gap-2">
@@ -35,7 +35,7 @@
                           background:linear-gradient(135deg,
                             {% if u[3] == 'admin' %}#7c3aed,#4f46e5{% else %}#06b6d4,#0284c7{% endif %});
                           display:flex;align-items:center;justify-content:center;
-                          font-size:0.85rem;color:#fff;font-weight:700;flex-shrink:0;">
+                          font-size:0.85rem;color:#fff; font-weight: 700;flex-shrink:0;">
                 {{ u[2][0]|upper }}
               </div>
               <span style="font-weight:600;font-size:.875rem;">@{{ u[2] }}</span>

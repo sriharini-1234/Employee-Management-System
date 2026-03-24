@@ -754,7 +754,9 @@ def index():
     if logged_in():
         return redirect("/dashboard")
     return render_template("index.html")
-
+@app.route("/about")
+def About():
+    return render_template("about.html")
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
