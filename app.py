@@ -863,7 +863,7 @@ def dashboard():
         total_emp   = q("SELECT COUNT(*) FROM employee",              fetch="one")[0]
         total_dept  = q("SELECT COUNT(DISTINCT edept) FROM employee", fetch="one")[0]
         total_users = q("SELECT COUNT(*) FROM users",                 fetch="one")[0]
-        recent      = q("SELECT * FROM employee ORDER BY eid DESC LIMIT 5", fetch="all")
+        recent      = q("SELECT * FROM employee ORDER BY eid LIMIT 5", fetch="all")
         return render_template("dashboard.html",
                                total_emp=total_emp,
                                total_dept=total_dept,
@@ -907,7 +907,7 @@ def add_employee():
 def view_employee():
     block = admin_required()
     if block: return block
-    employees = q("SELECT * FROM employee ORDER BY eid DESC", fetch="all")
+    employees = q("SELECT * FROM employee ORDER BY eid ", fetch="all")
     return render_template("view_employee.html", employees=employees)
 
 
@@ -1241,7 +1241,7 @@ def salary_slip_pdf(eid):
 def manage_users():
     block = admin_required()
     if block: return block
-    users = q("SELECT id, email, username, role FROM users ORDER BY id DESC", fetch="all")
+    users = q("SELECT id, email, username, role FROM users ORDER BY id ", fetch="all")
     return render_template("manage_users.html", users=users)
 
 

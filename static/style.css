@@ -236,6 +236,13 @@ textarea.form-control { resize: none; }
 .divider { border: none !important; border-top: 1.5px solid var(--border) !important; margin: 1.4rem 0 !important; }
 
 /* ===== STAT CARDS ===== */
+.square-card {
+  aspect-ratio: 1 / 1;   /* makes perfect square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
 .stat-card {
   border-radius: var(--radius) !important;
   border: none !important;
@@ -251,7 +258,10 @@ textarea.form-control { resize: none; }
 .stat-icon  { font-size: 2.2rem; margin-bottom: 0.5rem; }
 .stat-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.85; }
 .stat-val { font-family: 'Nunito', sans-serif; font-size: 1.8rem; font-weight: 800; }
-
+@media (max-width: 576px) {
+  .stat-val { font-size: 14px; }
+  .stat-icon { font-size: 18px; }
+} 
 /* ===== ACTION CARDS ===== */
 .action-card {
   background: var(--white);
